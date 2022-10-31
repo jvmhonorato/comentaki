@@ -10,4 +10,9 @@ COMENTAKI
 
 5: Criar em src firebase.js e colar a função firebaseConfig= {} E exportar pra ser usada em outros lugares da aplicação
 
-6: escolher Realtime data base e iniciar modo teste, passar valores, em seguida configura app.js pra receber os ddos no frontend 
+6: escolher Realtime data base e iniciar modo teste, passar valores, em seguida configura App.js pra receber os dados no frontend 
+
+
+USEEFFECT PRA LIMPAR A CONEXÃO COM FIREBASE
+
+7: Em App.js criar um state: visible pra passar dentro de um evento onClick pra quando clicar no botão renderizar o conteudo ou não
