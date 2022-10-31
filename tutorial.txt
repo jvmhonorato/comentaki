@@ -15,4 +15,13 @@ COMENTAKI
 
 USEEFFECT PRA LIMPAR A CONEXÃO COM FIREBASE
 
-7: Em App.js criar um state: visible pra passar dentro de um evento onClick pra quando clicar no botão renderizar o conteudo ou não
+7: Em App.js criar um useState: visible pra passar dentro de um evento onClick no <button> pra quando clicar no botão renderizar o conteudo ou não!
+
+
+
+CUSTOM HOOK PRA CARREGAR DADOS DO FIREBASE
+
+8: criar um parametro "ENDPOINT" na função que carrega o useEFFECT  passar esse parmentro como ref(endpoint)e tambem na dependencia do useEffect [endpoint]
+
+9: Em seguida estanciar uma função ternária e passala como parametro da função que carrega o useEFFECT passanod o test ou test/a que são os caminhos dos dados do firebase na nuvem
+
