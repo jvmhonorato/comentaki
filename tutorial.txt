@@ -1,0 +1,13 @@
+COMENTAKI 
+
+1: Instalar React : npx create-react-app <nome do projeto>
+
+2: Instalar dependecia firebase: npm install firebase
+
+3: No console em firebase.com add novo projeto, escolher web criar apelido,  em seguida clicar na engrenagem, configurações do projeto
+
+4:  Em configurações SDK copiar a função gerada: firebaseConfig={} 
+
+5: Criar em src firebase.js e colar a função firebaseConfig= {} E exportar pra ser usada em outros lugares da aplicação
+
+6: escolher Realtime data base e iniciar modo teste, passar valores, em seguida configura app.js pra receber os ddos no frontend 
