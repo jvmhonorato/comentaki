@@ -38,11 +38,23 @@ const useDatabasePush = endpoint => {
   }
   return [status, save]
 }
+
+const Time = ({timestamp}) => {
+  const date= new Date(timestamp)
+  const hours = date.getHours()
+  const minutes = '0'+date.getMinutes()
+  const seconds = '0'+date.getSeconds()
+  const day = (date.getDay()-1)
+  const month = (date.getMonth()+1)
+  const year = (date.getFullYear())
+  console.log(date)
+  return`${day}/${month}/${year} as ${hours}:${minutes.substring(1,3)}:${seconds.substring(1,3)}`
+}
 const Comment = ({comment}) => {
 
   return(
     <div>
-      {comment.content} Por: {comment.user.name}
+      {comment.content} Por: {comment.user.name} em: <Time timestamp={comment.createdAt}/> 
     </div>
   )
 }
@@ -66,26 +78,41 @@ return ids.map(id => {
 
 } 
 
+const NewCommnet = props => {
+  const [,save] = useDatabasePush('comments')
+  const [comment, setComment] = useState('')
+const createComment = () => {
+  if(comment !== ''){
+  save({ 
+    content:comment,
+    createdAt:firebase.database.ServerValue.TIMESTAMP,
+    user: {
+      id: '1',
+      name:'Victor'
+    }
+  })
+  setComment('')
+ }
+}
 
+
+return(
+  <>
+  <textarea value={comment} onChange={evt => setComment(evt.target.value)}/>
+     <button onClick={createComment}>Save</button>
+      </>
+)
+}
 
 function App() {
-const [visible, toogle] = useState(true)
-const [, save] = useDatabasePush('comments')
+//const [visible, toogle] = useState(true)
+
 
   return (
     <div >
     
-        <button onClick={() =>{ 
-        
-        save({ 
-          content:'Olá aqui é meu comentário!',
-          user: {
-            id: '1',
-            name:'Victor'
-          }
-        })
-        }}>Save</button>
-        
+     
+      <NewCommnet/>
       <Comments />
       
      

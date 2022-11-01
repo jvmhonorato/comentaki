@@ -39,4 +39,15 @@ em seguida passar o objeto a ser salvo  dentro do save
 12: criar componete Comment abstraindo comment  e e retornando esse componente dentro do ids.map() <Comment key={id} comment={data[id]}/>
 OBS: sempre o vetor [] dentro do .map() vai se referir aos idS da aplicação
 
-13:
+CRIANDO NOVO COMENTARIO
+
+13:Criar novo componeete NewComment e nepor por o  save useDatabasePush, e criar um useState comment, setComment
+
+14: Cria no JSX um <textarea>  passanto o value: commnet e um evento onChange com setComment retornando o que for digitado
+
+
+ADD DATA TIMESTAMP
+15: adicionar:createdAt:firebase.database.ServerValue.TIMESTAMP 
+ao save, pra salvar o rotulo de tempo dentro do comentáro
+
+16: Criar componete Time passando o parametro timestamp dinamicamente e dentro dele estanciar  um new Date() e tambem gethours, getminutes, getseconds, getday, getMonth, getFullYear. dar um return com template string retornando tudo
