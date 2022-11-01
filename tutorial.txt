@@ -29,3 +29,14 @@ CUSTOM HOOK PRA CARREGAR DADOS DO FIREBASE
 CRIANDO NOVO ITEM NO FIREBASE
 
 10:criar uma função useDatabasePush() com endpoint, e dentro dela um useState status, setStatus e dentro dela passar a função save com o PUSH , em seguida passar o save com os valores a serem adicionados no evento onclick 
+
+ORGANIZANDO E RENDERIZANDO OS COMENTARIOS
+
+11: 
+passar o endereço 'comments' const [, save] = useDatabasePush('comments')
+em seguida passar o objeto a ser salvo  dentro do save
+
+12: criar componete Comment abstraindo comment  e e retornando esse componente dentro do ids.map() <Comment key={id} comment={data[id]}/>
+OBS: sempre o vetor [] dentro do .map() vai se referir aos idS da aplicação
+
+13:

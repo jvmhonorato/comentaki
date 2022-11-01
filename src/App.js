@@ -38,42 +38,56 @@ const useDatabasePush = endpoint => {
   }
   return [status, save]
 }
+const Comment = ({comment}) => {
 
-//use params visible to use condition render 
-const Comments = ({visible}) => {
-  //if visible true: get all else get test/a
-  const endpoint = visible ? 'test' : 'test/a'
-  //send a condition render
+  return(
+    <div>
+      {comment.content} Por: {comment.user.name}
+    </div>
+  )
+}
+
+
+const Comments = () => {
+  
+  const endpoint = 'comments'
+  
 const data = useDatabase(endpoint)
-return (
-  <pre>{JSON.stringify(data)}</pre>
-)
+if(!data){
+  return <pre>Nenhum comentário até o momento!</pre>
+}
+const ids = Object.keys(data)
+if (ids.length === 0){
+  return <p>Carregando...</p>
+}
+return ids.map(id => {
+  return <Comment key={id} comment={data[id]}/>
+})
 
 } 
-const A = () => {
-  //get content from test/a
-  const data = useDatabase('test/a')
-  return(<pre>{JSON.stringify(data)}</pre>)
-}
+
 
 
 function App() {
 const [visible, toogle] = useState(true)
-const [status, save] = useDatabasePush('test')
+const [, save] = useDatabasePush('comments')
 
   return (
     <div >
-      <button onClick={() =>{ 
-        toogle(!visible)
-        
-        }}>Toogle</button>
+    
         <button onClick={() =>{ 
         
-        save({ valor:1, b: 2 })
+        save({ 
+          content:'Olá aqui é meu comentário!',
+          user: {
+            id: '1',
+            name:'Victor'
+          }
+        })
         }}>Save</button>
-        Status: <pre>{status}</pre>
-      <Comments visible={visible}/>
-      <A />
+        
+      <Comments />
+      
      
     </div>
   );
