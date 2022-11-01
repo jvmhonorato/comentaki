@@ -25,3 +25,7 @@ CUSTOM HOOK PRA CARREGAR DADOS DO FIREBASE
 
 9: Em seguida estanciar uma função ternária e passala como parametro da função que carrega o useEFFECT passanod o test ou test/a que são os caminhos dos dados do firebase na nuvem
 
+
+CRIANDO NOVO ITEM NO FIREBASE
+
+10:criar uma função useDatabasePush() com endpoint, e dentro dela um useState status, setStatus e dentro dela passar a função save com o PUSH , em seguida passar o save com os valores a serem adicionados no evento onclick 

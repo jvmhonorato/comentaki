@@ -22,6 +22,23 @@ const useDatabase = endpoint => {
   return data
 }
 
+
+const useDatabasePush = endpoint => {
+  const [status, setStatus] = useState('')
+
+  const save = data => {
+    const ref = firebase.database().ref(endpoint)
+    ref.push(data, err => {
+      if(err){
+        setStatus('ERROR')
+      }else{
+        setStatus('SUCCESS')
+      }
+    })
+  }
+  return [status, save]
+}
+
 //use params visible to use condition render 
 const Comments = ({visible}) => {
   //if visible true: get all else get test/a
@@ -42,10 +59,19 @@ const A = () => {
 
 function App() {
 const [visible, toogle] = useState(true)
+const [status, save] = useDatabasePush('test')
 
   return (
     <div >
-      <button onClick={() => toogle(!visible)}>Toogle</button>
+      <button onClick={() =>{ 
+        toogle(!visible)
+        
+        }}>Toogle</button>
+        <button onClick={() =>{ 
+        
+        save({ valor:1, b: 2 })
+        }}>Save</button>
+        Status: <pre>{status}</pre>
       <Comments visible={visible}/>
       <A />
      
