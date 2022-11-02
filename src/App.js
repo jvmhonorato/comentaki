@@ -1,7 +1,25 @@
 
 import React,{useState, useEffect} from 'react'
-import './App.css';
+
 import firebase from './firebase'
+
+
+// firebase
+// .auth()
+// .createUserWithEmailAndPassword( 'victorpachara@gmail.com', 'abc123')
+// .then( user => {
+//   user.displayName='Victor Honorato'
+//   firebase.auth().updateCurrentUser({user})
+  
+  
+// })
+
+firebase.auth().onAuthStateChanged(user => {
+  if(user){}
+  console.log(user.displayName)
+  user.updateProfile({displayName: 'Joao '})
+})
+
 
 //use param as a reference interface
 const useDatabase = endpoint => {

@@ -51,3 +51,12 @@ ADD DATA TIMESTAMP
 ao save, pra salvar o rotulo de tempo dentro do comentáro
 
 16: Criar componete Time passando o parametro timestamp dinamicamente e dentro dele estanciar  um new Date() e tambem gethours, getminutes, getseconds, getday, getMonth, getFullYear. dar um return com template string retornando tudo
+
+
+AUTENTICAÇÃO
+
+17: em firebase.com / authentication/ Método de login: Ativar email/senha
+
+18:EM firebase.js import auth, em seguida em App.js criaro metodo createUserWithEmailAndPassord pra criar novo usuário de autenticação
+
+19: Cria metodo onAuthStateChanged ra atualizar esse usuario
