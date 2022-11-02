@@ -1,7 +1,8 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import NewCommnet from './NewComment'
 import Comments from './Comments'
+import { AuthProvider } from './auth'
 
 import firebase from './firebase'
 
@@ -25,18 +26,20 @@ import firebase from './firebase'
 
 
 function App() {
-//const [visible, toogle] = useState(true)
+
 
 
   return (
-    <div >
     
-     
+    <AuthProvider>
+      <div >
       <NewCommnet/>
       <Comments />
-      
      
     </div>
+    </AuthProvider>
+     
+  
   );
 }
 

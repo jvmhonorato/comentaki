@@ -65,3 +65,15 @@ AUTENTICAÇÃO
 ORGANIZANDO O PROJETO:
 
 20: Separar os componetes por arquivos e exportar e importar pra seus respectivos
+
+
+USANDO CONTEXT API PRA AUTENTICÃO
+
+21: criar auth.js estanciar o o context: 
+export const AuthContext = React.createContext()
+
+22: criar o componente AuthProvider passando a depedencia {children} e dar u wrap com <AuthContext.Provider value={{ isAuth:1 }}>
+
+22: importar o AuthContext em App.js e envolver(wrap)com o <AuthContext.Provider> JSX do componente App.js, passando o value que será compartilhado com os outros componentes 
+
+23: Agora é só importar o AuthContext no componete que for usar o valor compartilhado no provider
