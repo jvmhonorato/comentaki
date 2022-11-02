@@ -59,4 +59,9 @@ AUTENTICAÇÃO
 
 18:EM firebase.js import auth, em seguida em App.js criaro metodo createUserWithEmailAndPassord pra criar novo usuário de autenticação
 
-19: Cria metodo onAuthStateChanged ra atualizar esse usuario
+19: Cria metodo onAuthStateChanged pra atualizar esse usuario
+
+
+ORGANIZANDO O PROJETO:
+
+20: Separar os componetes por arquivos e exportar e importar pra seus respectivos
