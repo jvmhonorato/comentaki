@@ -8,7 +8,7 @@ const Comment = ({comment}) => {
 
     return(
       <div>
-        {JSON.stringify(auth)}
+        {/* {JSON.stringify(auth)} */}
         {comment.content} Por: {comment.user.name} em: <Time timestamp={comment.createdAt}/> 
       </div>
     )

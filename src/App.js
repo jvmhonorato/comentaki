@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import NewCommnet from './NewComment'
 import Comments from './Comments'
+import CreateUser from './CreateUser'
 import { AuthProvider } from './auth'
 
 import firebase from './firebase'
@@ -17,11 +18,7 @@ import firebase from './firebase'
   
 // })
 
-// firebase.auth().onAuthStateChanged(user => {
-//   if(user){}
-//   console.log(user.displayName)
-//   user.updateProfile({displayName: 'Joao '})
-// })
+
 
 
 
@@ -35,6 +32,7 @@ function App() {
       <div >
       <NewCommnet/>
       <Comments />
+      <CreateUser/>
      
     </div>
     </AuthProvider>

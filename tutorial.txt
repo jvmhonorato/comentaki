@@ -74,6 +74,16 @@ export const AuthContext = React.createContext()
 
 22: criar o componente AuthProvider passando a depedencia {children} e dar u wrap com <AuthContext.Provider value={{ isAuth:1 }}>
 
-22: importar o AuthContext em App.js e envolver(wrap)com o <AuthContext.Provider> JSX do componente App.js, passando o value que será compartilhado com os outros componentes 
+22: importar o AuthProvider em App.js e envolver(wrap)com o <AuthContext.Provider> JSX do componente App.js, passando o value que será compartilhado com os outros componentes e exportar
 
 23: Agora é só importar o AuthContext no componete que for usar o valor compartilhado no provider
+
+24: passar um useEffect com firebase.auth retornando a condicional caso o usuário seja alterado setar o usuario atual, caso não seja setar nulo passar o valor d user pelo provider
+
+25:Criar uma função useCreateUser() retornando um state com parametros success e error pra servir de modelo de condicional da função que vem a seguir.
+
+26:criar a função crateUser com os parametro email, passwd pra serem passados dinamicamente na aplicação e dentro dela o: .createUserWithEmailAndPassword(email,passwd) função reservada do firebase que será u callback retornaod o a condicional se tiver usuário logado dar um ok se não dar um erro.
+
+27:estanciar a função createUser() no AuthProvider, passando os valores em value no retunr de Authcontext.provider
+
+28: Criar componente CreateUser.js  estanciar o context em auth , em seguida criar um <button onClick> retornando uma função auth.createUser.createUser('<email>','<passwd>') que são justamente as ações enviads pelo Authcontext.Provider
