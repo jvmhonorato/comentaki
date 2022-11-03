@@ -88,4 +88,10 @@ export const AuthContext = React.createContext()
 
 28: Criar componente CreateUser.js  estanciar o context em auth , em seguida criar um <button onClick> retornando uma função auth.createUser.createUser('<email>','<passwd>') que são justamente as ações enviads pelo Authcontext.Provider
 
-29: criar componente UserInfo.js, passar o context pra trazer o auth criar condicional para renderizar  o user ou retorna null, em seguida dar uma saudação com um pipe|| com a a condicional pegando ou o displayName ou o email com o split pra cortar o dominio
+29: No NewComment.js usar o context pr trazer os dados do firebase em auth em seguida estancair o displayName e o email pra salvar o comentário direcionado pra o nome do usário
+
+30: criar componente UserInfo.js, passar o context pra trazer o auth criar condicional para renderizar  o 'user' ou retornar null, em seguida dar uma saudação com um pipe|| com a a condicional pegando ou o displayName ou o email com o split pra cortar o dominio @gmail.com
+
+31:Criar dentro de UserInfo.js o componente FormDisplayName pra gerenciar o campo de input e o botão save , passar um useState onde o state vai no value do input e o setState será usado na função onChange pra trocar o valor do input de acordocom o que digitado
+
+32: criar evento onCLick no button chamando o save() com uma condicional caso seja diferente do nome que está escrito originalele dar um updateProfile({recebendo os dados do state pra o displayName})
