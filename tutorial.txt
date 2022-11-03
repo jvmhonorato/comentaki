@@ -87,3 +87,5 @@ export const AuthContext = React.createContext()
 27:estanciar a função createUser() no AuthProvider, passando os valores em value no retunr de Authcontext.provider
 
 28: Criar componente CreateUser.js  estanciar o context em auth , em seguida criar um <button onClick> retornando uma função auth.createUser.createUser('<email>','<passwd>') que são justamente as ações enviads pelo Authcontext.Provider
+
+29: criar componente UserInfo.js, passar o context pra trazer o auth criar condicional para renderizar  o user ou retorna null, em seguida dar uma saudação com um pipe|| com a a condicional pegando ou o displayName ou o email com o split pra cortar o dominio

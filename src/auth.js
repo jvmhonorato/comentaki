@@ -6,7 +6,7 @@ export const AuthContext = React.createContext()
 const useGetUser = () => {
     const [user, setUser] = useState({})
     useEffect(()=> {
-    firebase.auth().onAuthStateChanged(currentUser => {
+     firebase.auth().onAuthStateChanged(currentUser => {
      if(currentUser){
         setUser(currentUser)
      }else{
