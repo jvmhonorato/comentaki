@@ -47,6 +47,16 @@ const useCreateUser = () => {
  return [state, createUser]
 }
 
+//method to getout session
+const signout = () => {
+    firebase
+    .auth()
+    .signOut()
+    .then(() => {
+        console.log('signout')
+    }) 
+}
+
 
 export const AuthProvider = ({children}) => {
     const user = useGetUser()
@@ -58,7 +68,7 @@ export const AuthProvider = ({children}) => {
             user,
             createUser:{
             createUserState, createUser
-        }
+         },signout
             }}>
             {children}
         </AuthContext.Provider>

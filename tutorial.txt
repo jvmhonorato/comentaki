@@ -82,7 +82,7 @@ export const AuthContext = React.createContext()
 
 25:Criar uma função useCreateUser() retornando um state com parametros success e error pra servir de modelo de condicional da função que vem a seguir.
 
-26:criar a função crateUser com os parametro email, passwd pra serem passados dinamicamente na aplicação e dentro dela o: .createUserWithEmailAndPassword(email,passwd) função reservada do firebase que será u callback retornaod o a condicional se tiver usuário logado dar um ok se não dar um erro.
+26:criar a função crateUser com os parametro email, passwd pra serem passados dinamicamente na aplicação e dentro dela o: .createUserWithEmailAndPassword(email,passwd) função reservada do firebase que será u callbacttk retornaod o a condicional se tiver usuário logado dar um ok se não dar um erro.
 
 27:estanciar a função createUser() no AuthProvider, passando os valores em value no retunr de Authcontext.provider
 
@@ -94,4 +94,10 @@ export const AuthContext = React.createContext()
 
 31:Criar dentro de UserInfo.js o componente FormDisplayName pra gerenciar o campo de input e o botão save , passar um useState onde o state vai no value do input e o setState será usado na função onChange pra trocar o valor do input de acordocom o que digitado
 
-32: criar evento onCLick no button chamando o save() com uma condicional caso seja diferente do nome que está escrito originalele dar um updateProfile({recebendo os dados do state pra o displayName})
+32: criar evento onCLick no button chamando o save() com uma condicional caso seja diferente do nome que está escrito originalele dar um updateProfile({recebendo os dados do state pra o display 
+
+SIGNOUT METHOTD
+
+33: Em auth.js criar função signout com o firebase retornando o sinnOut() com m callback retornando no console, e passar no no vales na raiz de <AuthContex.Provider> pra ser enviados a outros componentes
+
+34: Em UserInfo.js no JSX passar um <button onClick={auth.signout}>

@@ -25,19 +25,22 @@ const FormDisplayName=({ displayName, user }) => {
 const  UserInfo = () => {
 const auth = useContext(AuthContext)
 
-const { displayName } = auth.user
-const alternativeDisplayName = auth.user.email
-const dn = displayName || alternativeDisplayName
+
 
 
 if (auth.user === null) {
     return null
  }   
 
+ const { displayName } = auth.user
+const alternativeDisplayName = auth.user.email
+const dn = displayName || alternativeDisplayName
+
 return (
     <>
        <p> Olá {displayName || alternativeDisplayName }!</p>
     <FormDisplayName displayName={dn} user={auth.user}/>
+    <button onClick={auth.signout}>Sair</button>
     </>
    
 )
