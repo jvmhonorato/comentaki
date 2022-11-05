@@ -101,3 +101,22 @@ SIGNOUT METHOTD
 33: Em auth.js criar função signout com o firebase retornando o sinnOut() com m callback retornando no console, e passar no no vales na raiz de <AuthContex.Provider> pra ser enviados a outros componentes
 
 34: Em UserInfo.js no JSX passar um <button onClick={auth.signout}>
+
+SIGN UP METHOTD
+35: Em createUser.js add um <input> pra email e senha
+
+36: Criar um state form, setForm  com o {email:'' e o passwd:''} como objeto inicial
+
+37: Criar uma função onChange = campo => evt =>{} pra que ira chamar o setFomr({...form. [campo]: evt.target.value})  o ...form pra capturar o valor digitado, e o[campo] pra passar dinamicamnete tanto p´ra email como pra passwd em seguida passar o evento onChange no <input>  chamando onChange
+
+38: Passar no <button> 'CREATE' o evento onClick={()=>{auth.createUser.createUser(form.email,form.passwd)}} one auth são os dados vindo do useContex que estão atrelados aos comandos CRUD do firebase
+
+
+SIGN IN METHOTD
+
+39: Criar SignINUser.js praticamnete com os mesmdos dados de createUser.js, alterando apenas os campos de vizalização do usuário pois a verdadeira mdança sera em auth.js
+
+40: Em auth.js criar a função: useSingInUser com a função:
+  const signInUser = (email, passwd) => {}  retornar   [state, createUser], em seguida no AuthProvider abstrair o state e a funsão que executa o firebase da função useSingInUser() em seguida passar as abstrações pelo value do AuthContext.Provider
+
+  41: Em SignInUser.js trocar os valores 

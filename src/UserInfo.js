@@ -27,7 +27,7 @@ const auth = useContext(AuthContext)
 
 
 
-
+//pull data  conditional 
 if (auth.user === null) {
     return null
  }   

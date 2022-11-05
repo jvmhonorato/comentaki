@@ -47,6 +47,28 @@ const useCreateUser = () => {
  return [state, createUser]
 }
 
+//
+const useSingInUser = () => {
+    const [state, setState] = useState({
+        error:'',
+        success:''
+    })
+
+    //Function sign from firebase
+    const signInUser = (email, passwd) => {
+     firebase
+    .auth()
+    .signInWithEmailAndPassword(email,passwd)
+    .catch(err => {
+            setState({
+                ...state,
+                error: err.message
+            })
+        })
+     }
+ return [state, signInUser]
+}
+
 //method to getout session
 const signout = () => {
     firebase
@@ -62,13 +84,20 @@ export const AuthProvider = ({children}) => {
     const user = useGetUser()
     // come from func above:state= createUserstate, createUser=createUser
     const [ createUserState,createUser] = useCreateUser()
+
+    //come from func above:state= createUserstate, createUser=createUser
+    const [signInUserState, signInUser] = useSingInUser() 
    
     return (
         <AuthContext.Provider value={{
             user,
             createUser:{
             createUserState, createUser
-         },signout
+         },
+         signInUser:{
+            signInUserState, signInUser
+         },
+         signout
             }}>
             {children}
         </AuthContext.Provider>
